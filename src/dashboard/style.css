@@ -1,0 +1,328 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --primary: #0f172a;
+  --accent: #4f46e5;
+  --accent-glow: rgba(79, 70, 229, 0.15);
+  --bg: #f8fafc;
+  --card: #ffffff;
+  --text: #1e293b;
+  --text-muted: #64748b;
+  --border: rgba(226, 232, 240, 0.8);
+  --success: #10b981;
+  --success-bg: #f0fdf4;
+  --warning: #f59e0b;
+  --warning-bg: #fffbeb;
+  --danger: #ef4444;
+  --danger-bg: #fff1f2;
+}
+
+/* Micro-animations: Fade In & Slide Up */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Techy dot-grid background for a premium developer/analytical vibe */
+.stApp {
+  background-color: #f8fafc !important;
+  background-image: radial-gradient(rgba(148, 163, 184, 0.15) 1px, #f8fafc 1px) !important;
+  background-size: 20px 20px !important;
+}
+
+/* Sidebar Styling: Modern Navigator Pane */
+section[data-testid="stSidebar"] {
+  background-color: #0f172a !important;
+  border-right: 1px solid rgba(255, 255, 255, 0.05) !important;
+  padding-top: 1.5rem;
+}
+
+section[data-testid="stSidebar"] * {
+  color: #cbd5e1 !important;
+}
+
+section[data-testid="stSidebar"] h1, 
+section[data-testid="stSidebar"] h2, 
+section[data-testid="stSidebar"] h3, 
+section[data-testid="stSidebar"] label, 
+section[data-testid="stSidebar"] div[data-baseweb="select"] * {
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+}
+
+section[data-testid="stSidebar"] .stSelectbox > div > div {
+  background-color: rgba(30, 41, 59, 0.7) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 12px !important;
+  padding: 2px !important;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+section[data-testid="stSidebar"] .stSelectbox > div > div:hover {
+  border-color: rgba(79, 70, 229, 0.6) !important;
+  background-color: rgba(30, 41, 59, 0.9) !important;
+}
+
+/* Metric Cards: Glassmorphism and Elegant Hover Glows */
+div[data-testid="stMetric"] {
+  background-color: rgba(255, 255, 255, 0.8) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  border: 1px solid var(--border) !important;
+  padding: 0.85rem 0.65rem !important; /* Reduced padding to fit column widths */
+  border-radius: 14px !important;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.02), 0 2px 8px -1px rgba(0, 0, 0, 0.01) !important;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+div[data-testid="stMetric"]:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 20px 25px -5px rgba(79, 70, 229, 0.08), 0 10px 10px -5px rgba(79, 70, 229, 0.04) !important;
+  border-color: rgba(79, 70, 229, 0.4) !important;
+  background-color: #ffffff !important;
+}
+
+div[data-testid="stMetric"] * {
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+}
+
+div[data-testid="stMetric"] [data-testid="stMetricLabel"] {
+  color: var(--text-muted) !important;
+  font-size: 0.72rem !important; /* Slightly smaller for column fit */
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.02em !important; /* Less spacing prevents wrapping */
+}
+
+div[data-testid="stMetric"] [data-testid="stMetricValue"] {
+  color: #0f172a !important;
+  font-size: 1.45rem !important; /* Reduced size to guarantee complete display */
+  font-weight: 800 !important;
+  margin-top: 4px !important;
+  letter-spacing: -0.02em !important;
+}
+
+/* Custom Premium Gradient Header Banner */
+.custom-header {
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%) !important;
+  border-radius: 18px !important;
+  padding: 2.25rem !important;
+  margin-bottom: 2rem !important;
+  box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.25) !important;
+  border: 1px solid rgba(255, 255, 255, 0.03) !important;
+  position: relative !important;
+  overflow: hidden !important;
+  animation: fadeInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.custom-header::before {
+  content: "" !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 4px !important;
+  background: linear-gradient(90deg, #4f46e5 0%, #3b82f6 50%, #10b981 100%) !important;
+}
+
+.custom-header h1 {
+  color: #ffffff !important;
+  margin: 0 !important;
+  font-size: 2.25rem !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.03em !important;
+}
+
+.custom-header .header-subtitle {
+  color: #94a3b8 !important;
+  margin: 0.6rem 0 0 0 !important;
+  font-size: 0.85rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+}
+
+/* Cost Optimization Highlight Metric Panel */
+.highlight-metric {
+  background: linear-gradient(135deg, #4f46e5 0%, #3b82f6 100%) !important;
+  border: none !important;
+  color: #ffffff !important;
+  padding: 1.75rem !important;
+  border-radius: 18px !important;
+  box-shadow: 0 12px 25px -5px rgba(79, 70, 229, 0.35), 0 8px 10px -5px rgba(79, 70, 229, 0.2) !important;
+  transition: all 0.3s ease !important;
+  animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.highlight-metric:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 20px 30px -5px rgba(79, 70, 229, 0.45) !important;
+}
+
+/* Call-to-action Action Buttons */
+.stButton > button {
+  background: linear-gradient(135deg, #4f46e5 0%, #3b82f6 100%) !important;
+  color: #ffffff !important;
+  border-radius: 12px !important;
+  font-weight: 700 !important;
+  font-size: 0.95rem !important;
+  border: none !important;
+  padding: 0.75rem 1.75rem !important;
+  box-shadow: 0 6px 15px rgba(79, 70, 229, 0.25) !important;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  width: 100% !important;
+}
+
+.stButton > button:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 12px 22px rgba(79, 70, 229, 0.35) !important;
+  color: #ffffff !important;
+}
+
+.stButton > button:active {
+  transform: translateY(0) !important;
+}
+
+/* Elegant Form Input Controls with Glow Focus */
+input[type="number"], div[data-baseweb="input"] {
+  border-radius: 12px !important;
+  border: 1px solid var(--border) !important;
+  transition: all 0.3s ease !important;
+}
+
+input[type="number"]:focus, div[data-baseweb="input"]:focus-within {
+  border-color: #4f46e5 !important;
+  box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.12) !important;
+}
+
+.stSlider [data-testid="stSliderTick"] {
+  color: var(--text-muted) !important;
+}
+
+/* Custom Glassmorphic Panels */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.75) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border: 1px solid rgba(226, 232, 240, 0.8) !important;
+  border-radius: 18px !important;
+  padding: 1.5rem !important;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05) !important;
+  margin-bottom: 1.5rem !important;
+  animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Responsive Grid and Spacing */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-weight: 800 !important;
+  color: #0f172a !important;
+}
+
+h1 {
+  font-size: 2.25rem !important;
+  letter-spacing: -0.03em !important;
+}
+
+h2 {
+  font-size: 1.45rem !important;
+  letter-spacing: -0.02em !important;
+  margin-top: 1.25rem !important;
+  margin-bottom: 1.25rem !important;
+}
+
+/* Custom Recommendation Alerts */
+.custom-alert {
+  padding: 1.25rem 1.5rem !important;
+  border-radius: 14px !important;
+  border-left: 5px solid transparent !important;
+  margin-bottom: 1.25rem !important;
+  font-weight: 500 !important;
+  box-shadow: 0 4px 12px -2px rgba(0, 0, 0, 0.02) !important;
+  animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.alert-success {
+  background-color: var(--success-bg) !important;
+  border-left-color: var(--success) !important;
+}
+
+.alert-warning {
+  background-color: var(--warning-bg) !important;
+  border-left-color: var(--warning) !important;
+}
+
+.alert-danger {
+  background-color: var(--danger-bg) !important;
+  border-left-color: var(--danger) !important;
+}
+
+.alert-info {
+  background-color: #f0f9ff !important;
+  border-left-color: #0284c7 !important;
+}
+
+/* Force light background for entire app main area */
+.main, .stApp {
+  background-color: #f8fafc !important;
+}
+
+/* Ensure dark readable text in main dashboard body regardless of user browser dark theme settings */
+.main p, .main span, .main label, .main li, .main h1, .main h2, .main h3, .main h4, .main h5, .main h6, .main div {
+  color: #1e293b;
+}
+
+/* Ensure custom glassmorphic panels have dark slate text */
+.glass-panel, .glass-panel * {
+  color: #1e293b !important;
+}
+
+/* Protect white text inside premium highlight card */
+.highlight-metric, .highlight-metric * {
+  color: #ffffff !important;
+}
+
+/* Guarantee alert message text readability */
+.custom-alert.alert-success, .custom-alert.alert-success * {
+  color: #065f46 !important;
+}
+
+.custom-alert.alert-warning, .custom-alert.alert-warning * {
+  color: #92400e !important;
+}
+
+.custom-alert.alert-danger, .custom-alert.alert-danger * {
+  color: #991b1b !important;
+}
+
+.custom-alert.alert-info, .custom-alert.alert-info * {
+  color: #0369a1 !important;
+}
+
+/* Smooth chart containers */
+.js-plotly-plot {
+  animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Hide default Streamlit auto-generated multi-page navigation links */
+div[data-testid="stSidebarNav"] {
+  display: none !important;
+}
+
+/* Hide default streamlit UI noise */
+#MainMenu, footer, .stDeployButton {
+  visibility: hidden !important;
+}
